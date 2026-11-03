@@ -18,9 +18,9 @@ def divide(a, b):
 
 def calculator():
     try:
+        operation = input("Choose operation (+, -, *, /): ").strip()
         a = float(input("Enter first number: "))
         b = float(input("Enter second number: "))
-        operation = input("Choose operation (+, -, *, /): ").strip()
 
         if operation == "+":
             result = add(a, b)
