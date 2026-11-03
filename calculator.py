@@ -1,18 +1,44 @@
-#first we have to make a function for each operation we wanted to perform 
-#then we'll and then print them 
-
-#sum of two nums
-a = int(input("please enter first number : "))
-b = int(input("please enter second number : " ))
-sum = a + b 
-print("sum of two numbers is :", sum)
-difference = a - b 
-print("difference of two numbers is : ", difference )
-multiplication = a * b
-print("mulitiplication of two nummbers is : ", multiplication)
-division = a/b
-print("division of two numbers is :", division )
+def add(a, b):
+    return a + b
 
 
+def subtract(a, b):
+    return a - b
 
 
+def multiply(a, b):
+    return a * b
+
+
+def divide(a, b):
+    if b == 0:
+        raise ValueError("Division by zero is not allowed.")
+    return a / b
+
+
+def calculator():
+    try:
+        a = float(input("Enter first number: "))
+        b = float(input("Enter second number: "))
+        operation = input("Choose operation (+, -, *, /): ").strip()
+
+        if operation == "+":
+            result = add(a, b)
+        elif operation == "-":
+            result = subtract(a, b)
+        elif operation == "*":
+            result = multiply(a, b)
+        elif operation == "/":
+            result = divide(a, b)
+        else:
+            print("Invalid operation.")
+            return
+
+        print(f"Result: {result}")
+
+    except ValueError:
+        print("Please enter valid numbers.")
+
+
+if __name__ == "__main__":
+    calculator()
